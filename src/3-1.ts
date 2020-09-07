@@ -1,7 +1,4 @@
-function mapFromArray<
-  T extends { [key in K]: unknown },
-  K extends string | number | symbol
->(arr: T[], key: K): Map<K, T> {
+function mapFromArray<T, K extends keyof T>(arr: T[], key: K): Map<K, T> {
   const result = new Map();
   for (const obj of arr) {
     result.set(obj[key], obj);
