@@ -9,8 +9,8 @@ interface EventPayloads {
   end: {};
 }
 
-type Spread<Ev, EvOrig, E> = Ev extends keyof E
-  ? EvOrig[] extends Ev[]
+type Spread<Ev, EvOrig, E> = /*use distribution*/ Ev extends keyof E
+  ? /*avoid distribution*/ EvOrig[] extends Ev[]
     ? E[Ev]
     : never
   : never;
