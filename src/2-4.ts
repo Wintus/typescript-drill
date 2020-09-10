@@ -1,6 +1,4 @@
-function giveId<T extends { [key: string]: unknown }>(
-  obj: T
-): T & { id: string } {
+function giveId<T>(obj: T): T & { id: string } {
   const id = "本当はランダムがいいけどここではただの文字列";
   return {
     ...obj,
